@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,6 +69,7 @@ opacity:1;
 transform:translateY(0);
 filter:blur(0);
 pointer-events:auto;
+z-index:5;
 }
 
 .card{
@@ -172,8 +172,8 @@ background:rgba(166,31,75,.18);
 .side-photo{
 width:100%;
 height:100%;
-object-fit:cover;
-filter:brightness(.78);
+object-fit:contain;
+border-radius:30px;
 }
 
 .gallery{
@@ -225,56 +225,125 @@ opacity:0;
 
 @media(max-width:980px){
 
-body{
-overflow:auto;
-}
-
-.slider{
-height:auto;
-}
-
 .page{
-position:relative;
-opacity:1;
-transform:none;
-filter:none;
-pointer-events:auto;
-margin:20px 0;
+position:absolute;
+opacity:0;
+transform:translateY(40px);
+filter:blur(8px);
+pointer-events:none;
+margin:12px 0;
+padding:10px;
 }
 
 .card{
 grid-template-columns:1fr;
 height:auto;
+border-radius:26px;
 }
 
 .left,
 .right{
-padding:28px 22px;
+padding:26px 20px;
+}
+
+.number{
+position:relative;
+top:auto;
+left:auto;
+margin-bottom:18px;
+font-size:.9rem;
 }
 
 h1{
 font-size:2rem;
+line-height:1.35;
 }
 
 h2{
-font-size:2rem;
+font-size:1.7rem !important;
+line-height:1.4;
 }
 
-p{
-font-size:.96rem;
-line-height:1.8;
+p,
+.quote,
+.final-text{
+font-size:.95rem;
+line-height:1.9;
 }
+
+.image-bg,
+.side-photo{
+width:100%;
+height:100%;
+object-fit:contain;
+filter:brightness(.78);
+border-radius:28px;
+padding:12px;
+background:rgba(255,255,255,.03);
+}
+
 
 .gallery{
 grid-template-columns:1fr;
 }
 
 .gallery img{
-height:240px;
+height:300px;
 }
 
 button{
 width:100%;
+padding:15px;
+font-size:.95rem;
+margin-top:28px;
+}
+
+.right img[style]{
+max-width:100% !important;
+height:340px !important;
+border-radius:22px !important;
+}
+}
+
+@media(max-width:480px){
+
+.page{
+padding:8px;
+}
+
+.card{
+border-radius:22px;
+}
+
+.left,
+.right{
+padding:22px 16px;
+}
+
+h1{
+font-size:1.55rem;
+}
+
+h2{
+font-size:1.35rem !important;
+}
+
+p,
+.quote,
+.final-text{
+font-size:.90rem;
+line-height:1.8;
+}
+
+.image-bg,
+.side-photo,
+.gallery img,
+.right img[style]{
+height:260px !important;
+}
+
+button{
+font-size:.9rem;
 }
 }
 </style>
@@ -347,15 +416,16 @@ A OAB não define quem você é… mas confirma a <span class="gold">capacidade,
 <section class="page">
 <div class="card">
 
+<div class="left"></div>
+<span class="number">03 / 04</span>
 <div class="left">
 <img src="img/foto2.jpg" class="side-photo">
 </div>
 
 <div class="right">
-<span class="number">03 / 04</span>
 
 <h2 class="glow">
-🌟 Meu Dr. Pantoja — OAB 46🌟
+🌟Meu Dr. Pantoja — OAB 46🌟
 </h2>
 
 <p class="quote">
